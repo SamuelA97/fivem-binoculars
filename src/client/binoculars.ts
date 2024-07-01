@@ -25,7 +25,6 @@ function hideHud(): void {
 function enable(): void {
     const playerPed = PlayerPedId();
 
-    SendNuiMessage(JSON.stringify({ type: 'show', zoom: 5 }));
     TaskStartScenarioInPlace(playerPed, 'WORLD_HUMAN_BINOCULARS', 0, false);
 
     lookingThroughBinoculars = true;
@@ -42,8 +41,6 @@ function enable(): void {
 
 function disable(): void {
     const playerPed = PlayerPedId();
-
-    SendNuiMessage(JSON.stringify({ type: 'hide' }));
 
     ClearPedTasks(playerPed);
 
